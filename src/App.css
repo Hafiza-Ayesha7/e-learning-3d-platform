@@ -1,0 +1,635 @@
+/* ==========================================================================
+   1. Layout & Global Utilities
+   ========================================================================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 1.5rem 3rem 1.5rem; /* Header overlap se bachne ke liye */
+}
+
+.section-block {
+  margin-top: 5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title h1, 
+.section-title h2 {
+  color: var(--text-h);
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  color: var(--text);
+}
+
+/* ==========================================================================
+   2. Navbar
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-h);
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent, #8b5cf6);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   3. Buttons
+   ========================================================================== */
+.btn-primary {
+  background-color: var(--accent, #8b5cf6);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--code-bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--border);
+}
+
+.btn-lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
+.hero-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Update your hero heading CSS */
+.hero-section h1 {
+  /* Set a responsive font size */
+  font-size: clamp(1.8rem, 5vw, 3rem); 
+  
+  /* Ensure proper spacing between multiline text */
+  line-height: 1.25; 
+  
+  /* Prevent word break issues */
+  word-wrap: break-word;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.canvas-hero-container {
+  background: var(--accent-bg);
+  border: 2px dashed var(--accent-border);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   5. Grids & Layout Structures
+   ========================================================================== */
+.features-section, 
+.steps-grid, 
+.testimonials-grid, 
+.gallery-grid, 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   6. General Cards & Course Cards
+   ========================================================================== */
+.feature-card, 
+.course-card, 
+.step-card, 
+.testimonial-card, 
+.info-card, 
+.team-card, 
+.gallery-card, 
+.form-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.05));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0; /* Course card container internal padding handles layout */
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.course-preview-box {
+  position: relative;
+  background-color: var(--code-bg);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-emoji {
+  font-size: 3.5rem;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--bg);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.course-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent, #8b5cf6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-body h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text-h);
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.star-icon {
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+/* ==========================================================================
+   7. Specific Sections (Steps, Testimonials, Stats)
+   ========================================================================== */
+.step-card { 
+  text-align: center; 
+  position: relative; 
+}
+
+.step-number {
+  background: var(--accent, #8b5cf6);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+.rating-stars { color: #f59e0b; margin-bottom: 0.8rem; }
+.comment { font-style: italic; margin-bottom: 1rem; }
+.user-info { display: flex; flex-direction: column; font-size: 0.9rem; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-card h2 { 
+  color: var(--accent, #8b5cf6); 
+  font-size: 2.2rem; 
+}
+
+/* ==========================================================================
+   8. Search, Filters & Pagination
+   ========================================================================== */
+.search-filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  margin-left: 0.5rem;
+  color: var(--text);
+}
+
+.category-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.pill {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.pill.active { 
+  background: var(--accent, #8b5cf6); 
+  color: #fff; 
+  border-color: var(--accent, #8b5cf6); 
+}
+
+.pagination-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.pagination-box .btn-secondary {
+  min-width: 220px;
+  padding: 0.75rem 1.75rem;
+}
+
+/* ==========================================================================
+   9. Gallery & Modals
+   ========================================================================== */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gallery-card { cursor: pointer; }
+
+.gallery-preview {
+  height: 180px;
+  background: var(--code-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.gallery-card:hover .gallery-overlay { opacity: 1; }
+.gallery-info { margin-top: 1rem; }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.auth-modal {
+  max-width: 400px;
+}
+
+.auth-modal h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-h);
+}
+
+/* ==========================================================================
+   10. Contact Page Forms
+   ========================================================================== */
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.info-side-panel { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+/* FAQ Accordion */
+.faq-list { max-width: 800px; margin: 0 auto; }
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  background: var(--bg);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.faq-answer { padding: 0 1rem 1rem; color: var(--text); }
+
+/* ==========================================================================
+   11. Footer
+   ========================================================================== */
+.footer {
+  background: var(--code-bg);
+  border-top: 1px solid var(--border);
+  padding: 3rem 5% 1.5rem;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.newsletter-box { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+
+.newsletter-box input {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  flex: 1;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   12. Dark Theme Variables & Media Queries
+   ========================================================================== */
+:root {
+  --bg: #ffffff;
+  --text: #4b5563;
+  --text-h: #111827;
+  --border: #e5e7eb;
+  --code-bg: #f9fafb;
+  --accent: #8b5cf6;
+  --accent-bg: rgba(139, 92, 246, 0.1);
+  --accent-border: rgba(139, 92, 246, 0.3);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+:root.dark-theme {
+  --bg: #0f172a;
+  --text: #cbd5e1;
+  --text-h: #f8fafc;
+  --border: #334155;
+  --code-bg: #1e293b;
+  --accent: #a855f7;
+  --accent-bg: rgba(168, 85, 247, 0.15);
+  --accent-border: rgba(168, 85, 247, 0.4);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Navigation & Breakpoints */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagination-box .btn-secondary {
+    width: 100%;
+  }
+}
