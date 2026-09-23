@@ -75,4 +75,4 @@ Ayesha
 
 BS Software Engineering Technology Student at Sir Syed University of Engineering and Technology
 
-🔗 LinkedIn: Ayesha
+🔗 LinkedIn: [Ayesha](https://www.linkedin.com/in/ayesha-298411341)
