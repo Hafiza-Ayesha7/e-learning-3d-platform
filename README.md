@@ -1,33 +1,33 @@
 # 🎓 E-Learn 3D Platform
 
-E-Learn 3D ek modern web application hai jo interactive 3D visualizations aur models ke zariye learning experience ko engage aur intuitive banati hai[cite: 12].
+E-Learn 3D is a modern web application designed to make the learning experience engaging and intuitive through interactive 3D visualizations and models.
 
 ---
 
 ## 📄 Project Overview
 
-E-Learn 3D Platform users ko 3D educational models explore karne, interactive courses browse karne[cite: 12], aur dark/light theme options ke saath[cite: 13] ek seamless learning experience provide karta hai. Isme user authentication (Login / Sign Up)[cite: 10, 13] aur local session state management bhi shamil hai[cite: 10].
+The E-Learn 3D Platform offers users a seamless learning experience, allowing them to explore educational 3D models, browse interactive courses, and toggle between dark and light themes. It also includes user authentication (Login / Sign Up) alongside local session state management.
 
 ---
 
 ## ✨ Main Features
 
-* 📱 **Responsive Layout**: Sabhi screen sizes (Mobile, Tablet, Desktop) ke liye optimized UI.
-* 🌗 **Theme Switcher**: Dark aur Light mode support[cite: 13].
-* 🔒 **Modal Authentication**: Built-in Client-side Login aur Sign Up modal state management ke sath[cite: 10].
-* 🎨 **3D Interactive Hero Canvas**: Interactive 3D learning components setup[cite: 11].
-* 📚 **Courses & Gallery Views**: Educational courses aur 3D interactive assets dekhne ke liye dedicated sections[cite: 12].
-* ⚡ **Fast Performance**: Vite aur React 19 par built fast rendering pipeline[cite: 17].
+* 📱 **Responsive Layout**: Optimized UI for all screen sizes (Mobile, Tablet, Desktop).
+* 🌗 **Theme Switcher**: Support for both Dark and Light modes.
+* 🔒 **Modal Authentication**: Built-in client-side Login and Sign Up with modal state management.
+* 🎨 **3D Interactive Hero Canvas**: Setup for interactive 3D learning components.
+* 📚 **Courses & Gallery Views**: Dedicated sections for viewing educational courses and 3D interactive assets.
+* ⚡ **Fast Performance**: Built on Vite and React 19 for a fast rendering pipeline.
 
 ---
 
 ## 🛠️ Tech Stack & Dependencies
 
-* **Frontend Framework**: React 19[cite: 17]
-* **Build Tool**: Vite[cite: 17]
-* **Routing**: React Router DOM (v7)[cite: 17]
-* **Icons**: Lucide React[cite: 17]
-* **Linter**: Oxlint[cite: 17]
+* **Frontend Framework**: React 19
+* **Build Tool**: Vite
+* **Routing**: React Router DOM (v7)
+* **Icons**: Lucide React
+* **Linter**: Oxlint
 
 ---
 
@@ -50,32 +50,29 @@ elearning-3d-platform/
 ├── index.html
 ├── package.json
 └── README.md
-
 ⚙️ How to Run the Project Locally
-Repository Clone Karein:
+Clone the Repository:
 
 Bash
 
 
 git clone [https://github.com/Hafiza-Ayesha7/e-learning-3d-platform.git](https://github.com/Hafiza-Ayesha7/e-learning-3d-platform.git)
 cd elearning-3d-platform
-Dependencies Install Karein:
+Install Dependencies:
+
+Bash
+
+
 npm install
-Development Server Run Karein:
+Run Development Server:
+
+Bash
+
+
 npm run dev
-
-echo "# e-learning-3d-platform" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Hafiza-Ayesha7/e-learning-3d-platform.git
-git push -u origin main#
-
-
-## 👨‍💻 Author
+👨‍💻 Author
 Ayesha
 
-BS Software Engineering Technology (Student at Sir Syed University of Engineering and Technology)
+BS Software Engineering Technology Student at Sir Syed University of Engineering and Technology
 
-LinkedIn: https://www.linkedin.com/in/ayesha-298411341
+🔗 LinkedIn: Ayesha
