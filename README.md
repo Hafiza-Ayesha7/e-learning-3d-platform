@@ -71,3 +71,11 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Hafiza-Ayesha7/e-learning-3d-platform.git
 git push -u origin main#
+
+
+## 👨‍💻 Author
+Ayesha
+
+BS Software Engineering Technology (Student at Sir Syed University of Engineering and Technology)
+
+LinkedIn: https://www.linkedin.com/in/ayesha-298411341
